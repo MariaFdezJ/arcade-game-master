@@ -1,5 +1,19 @@
 var getSpeed = function() {
 	//Math.floor((Math.random() * 101)+50)*5;//How do I calculate speed??
+	
+	// CSURIEL>>> you can use an object instead of switch case: 
+	// var number = Math.floor((Math.random() * 5)+1);
+
+	// var numbers = {
+	// 	1 : 200,
+	// 	2 : 300,
+	// 	3 : 400,
+	// 	4 : 500,
+	// 	5 : 550
+	// };
+
+	// return numbers[number];
+
 	var number = Math.floor((Math.random() * 5)+1);
 	switch(number){
 		case 1:
@@ -64,7 +78,11 @@ Enemy.prototype.update = function(dt) {
     // dividing into 83 to check which row
     var enemyRow = Math.trunc((this.y+41)/83);
     var playerRow = Math.trunc((player.y+41)/83);
-
+	
+    // CSURIEL>>> you can check for both situations here: 
+	// if (enemyColumn === playerColumn && enemyRow === playerRow) {
+	// 	player.reset();
+	// }
     if( enemyColumn=== playerColumn){
     	if(enemyRow === playerRow ){
     		//console.log('Same column and row');
